@@ -31,17 +31,22 @@ body{
     flex-basis: 65%;
     display: flex;
     flex-direction: column;
-    background: #aaa;
 }
 
-header,
-footer{
-    padding: 30px;
-    background: red;
+header{
+    padding: 20px;
+    background: #eaeaea;
 }
 
 main{
     flex-grow: 1;
+    background-image: url(../img/mine.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+footer{
+    padding: 7px 25px;
 }
 
 img{
@@ -59,7 +64,14 @@ a{
 }
 
 i{
+    font-size: 18px;
     color: #b1b1b1;
+}
+
+input{
+    flex-grow: 1;
+    border: none;
+    padding: 0 10px;
 }
 
 
@@ -81,8 +93,7 @@ i{
 }
 
 .user-icon a{
-    margin: 0 7px;
-    color: gray;
+    margin: 0 7px;;
 }
 
 /* NOTIFICATIONS */
@@ -129,11 +140,8 @@ i{
     flex-grow: 1;
     max-width: 88%;
     position: relative;
-    top: 0.75px;
     left: -4px;
     line-height: 22px;
-    background: #fff;
-    border: none;
     font-size: 10px;
 }
 
@@ -152,4 +160,27 @@ i{
 
 .contacts ul li:last-child{
     border-bottom: none;
+}
+
+/* MAIN */
+header{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* FOOTER */
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f4eeea;
+}
+
+footer input{
+   flex-grow: 1;
+   margin: 0 15px;
+   line-height: 35px;
+   border: none;
+   border-radius: 5px;
+   font-size: 12px;
 }
