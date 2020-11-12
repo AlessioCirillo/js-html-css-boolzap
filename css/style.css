@@ -25,7 +25,6 @@ body{
 
 .sidebar{
     flex-basis: 35%;
-    background: #ccc;
 }
 
 .content{
@@ -43,6 +42,11 @@ footer{
 
 main{
     flex-grow: 1;
+}
+
+img{
+    width: 40px;
+    border-radius: 50%;
 }
 
 span{
@@ -74,11 +78,6 @@ i{
     display: flex;
     align-items: center;
     flex-basis: 50%;
-}
-
-.profile img{
-    width: 40px;
-    border-radius: 50%;
 }
 
 .user-icon a{
@@ -139,6 +138,18 @@ i{
 }
 
 /* CONTACTS LIST */
-.contacts ul li img{
-    height: 30px;
+.contacts ul li {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 10px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.contacts ul li span{
+    padding: 0 10px;
+}
+
+.contacts ul li:last-child{
+    border-bottom: none;
 }
