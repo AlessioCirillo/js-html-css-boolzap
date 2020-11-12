@@ -3,3 +3,137 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body{
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(
+        to bottom,#009988 0% ,#009988 15%,#d7dbd4 15%, #d7dbd4 100%);
+}
+
+/* LAYOUT */
+.container{   
+    font-size: 12px;
+    display: flex;
+    width: 80%;
+    height: 95%;
+    background: #fff;
+}
+
+.sidebar{
+    flex-basis: 35%;
+    background: #ccc;
+}
+
+.content{
+    flex-basis: 65%;
+    display: flex;
+    flex-direction: column;
+    background: #aaa;
+}
+
+header,
+footer{
+    padding: 30px;
+    background: red;
+}
+
+main{
+    flex-grow: 1;
+}
+
+span{
+    font-weight: 600;
+}
+
+a{
+    font-size: 10px;
+    padding-top: 3px;
+}
+
+i{
+    color: #b1b1b1;
+}
+
+
+/* SIDEBAR */
+
+/* PROFILE */
+.user-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background: #eaeaea;
+}
+
+.profile{
+    display: flex;
+    align-items: center;
+    flex-basis: 50%;
+}
+
+.profile img{
+    width: 40px;
+    border-radius: 50%;
+}
+
+.user-icon a{
+    margin: 0 7px;
+    color: gray;
+}
+
+/* NOTIFICATIONS */
+.sidebar .notifications{
+    display: flex;
+    padding: 10px;
+    background: #74dcff ;
+}
+
+.sidebar .notifications i{
+    width: 40px;
+    height: 40px;
+    padding: 12px 0;
+    color: #7edeff;
+    border-radius: 50%;
+    text-align: center;
+    background: #fff;
+}
+
+.notifications-text{
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+}
+
+/* SEARCH */
+.search{
+    padding: 5px;
+    background: #eaeaea;
+}
+
+.search-bar{
+    display: flex;
+
+}
+
+.sidebar .search-bar i {
+    flex-basis: 42px;
+    padding: 5px 15px;
+    background: #fff;
+}
+
+.sidebar .search-bar input{
+    flex-grow: 1;
+    max-width: 88%;
+    position: relative;
+    top: 0.75px;
+    left: -4px;
+    line-height: 22px;
+    background: #fff;
+    border: none;
+    font-size: 10px;
+}
