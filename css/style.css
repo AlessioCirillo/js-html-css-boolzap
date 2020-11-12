@@ -9,6 +9,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    min-width: 900px;
     height: 100vh;
     background-image: linear-gradient(
         to bottom,#009988 0% ,#009988 15%,#d7dbd4 15%, #d7dbd4 100%);
@@ -60,7 +61,6 @@ span{
 
 a{
     font-size: 10px;
-    padding-top: 3px;
 }
 
 i{
@@ -72,6 +72,11 @@ input{
     flex-grow: 1;
     border: none;
     padding: 0 10px;
+}
+
+.user-section span,
+.profile span{
+    padding-left: 10px;
 }
 
 
@@ -119,6 +124,10 @@ input{
     padding: 0 10px;
 }
 
+.notifications-text a {
+    padding-top: 3px;
+}
+
 /* SEARCH */
 .search{
     padding: 5px;
@@ -127,7 +136,6 @@ input{
 
 .search-bar{
     display: flex;
-
 }
 
 .sidebar .search-bar i {
@@ -163,9 +171,23 @@ input{
 }
 
 /* MAIN */
+
+/* HEADER */
 header{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+header .profile .info{
+    display: flex;
+    flex-direction: column;
+}
+
+header .profile .info span:last-child{
+    padding-top: 3px;
+    font-weight: 400;
+    font-size: 12px;
 }
 
 /* FOOTER */
