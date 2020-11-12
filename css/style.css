@@ -137,3 +137,8 @@ i{
     border: none;
     font-size: 10px;
 }
+
+/* CONTACTS LIST */
+.contacts ul li img{
+    height: 30px;
+}

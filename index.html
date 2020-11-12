@@ -41,11 +41,16 @@
                    <input type="text" name="" id="" placeholder="Cerca o inizia un anuova chat">
                </div>
            </div>
-           <ul>
-               <li>
 
-               </li>
-           </ul>
+           <!-- CONTACTS LIST -->
+           <div class="contacts">
+               <ul>
+                   <li v-for="(name,avatar) in contacts">
+                        <img :src="'./img/avatar' + avatar + '.jpg'" alt="">
+                        <span>{{name}}</span>
+                   </li>
+               </ul>
+           </div>
         </div>
 
         <div class="content">
