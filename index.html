@@ -48,10 +48,15 @@
            <!-- CONTACTS LIST -->
            <div class="contacts">
                <ul>
-                   <li v-for="contact in contacts">
-                        <img :src="'./img/avatar' + contact.avatar + '.jpg'" alt="">
-                        <span>{{contact.name}}</span>
-                   </li>
+                   <a href="#">
+                        <li 
+                            v-for="(contact, index) in contacts" @click="indexContacts = index"
+                            :class="indexContacts === index ? 'active' : ''"
+                        >
+                            <img :src="'./img/avatar' + contact.avatar + '.jpg'" alt="">
+                            <span>{{contact.name}}</span>
+                        </li>
+                   </a>
                </ul>
            </div>
         </div>
@@ -61,30 +66,47 @@
 
             <!-- HEADER -->
             <header>
+
                 <div class="profile">
-                    <img :src="'./img/avatar' + contacts[0].avatar + '.jpg'" alt="">
+                    <img :src="'./img/avatar' + contacts[indexContacts].avatar + '.jpg'" alt="">
                     <div class="info">
-                        <span>{{contacts[0].name}}</span>
+                        <span>{{contacts[indexContacts].name}}</span>
                         <span>Ultimo accesso oggi alle 10:35 </span>
                     </div>
                 </div>
+
                 <div class="user-icon">
                     <a href="#"><i class="fas fa-search"></i></a>
                     <a href="#"><i class="fas fa-paperclip"></i></a>
                     <a href="#"><i class="fas fa-ellipsis-v"></i></a>
                 </div>
+
             </header>
 
             <!-- MAIN -->
             <main>
-                
+
+                <div  
+                    v-for="(message, index) in contacts[indexContacts].messages" 
+                    :class="message.status === 'sent' ? 'sent' : 'received'"
+                >
+                    <span>{{message.message}}</span>
+                    <span class="date">{{message.date}}</span>
+                </div>
+
             </main>
 
             <!-- FOOTER -->
             <footer>
-                <a href="#"><i class="far fa-smile"></i></a>
+
+                <a href="#">
+                    <i class="far fa-smile"></i>
+                </a>
                 <input type="text" name="" id="" placeholder="Scrivi un messaggio">
-                <a href="#"><i class="fas fa-microphone"></i></a>         
+                <a href="#">
+                    <i class="fas fa-microphone"></i>
+                </a> 
+
             </footer>
         </div>
     </div>

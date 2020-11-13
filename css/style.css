@@ -17,7 +17,7 @@ body{
 
 /* LAYOUT */
 .container{   
-    font-size: 12px;
+    font-size: 13px;
     display: flex;
     width: 80%;
     height: 95%;
@@ -26,6 +26,8 @@ body{
 
 .sidebar{
     flex-basis: 35%;
+    display: flex;
+    flex-direction: column;
 }
 
 .content{
@@ -35,15 +37,19 @@ body{
 }
 
 header{
-    padding: 20px;
+    padding: 5px;
     background: #eaeaea;
 }
 
 main{
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
+    padding: 50px;
     background-image: url(../img/mine.jpg);
     background-size: cover;
     background-position: center;
+    overflow-y: auto;
 }
 
 footer{
@@ -146,14 +152,22 @@ input{
 
 .sidebar .search-bar input{
     flex-grow: 1;
-    max-width: 88%;
-    position: relative;
-    left: -4px;
     line-height: 22px;
     font-size: 10px;
 }
 
 /* CONTACTS LIST */
+.contacts{
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.contacts a{
+    font-size: 13px;
+    text-decoration: none;
+    color: #000;
+}
+
 .contacts ul li {
     display: flex;
     align-items: center;
@@ -170,7 +184,10 @@ input{
     border-bottom: none;
 }
 
-/* MAIN */
+
+.active{
+    background: #e9ebeb;
+}
 
 /* HEADER */
 header{
@@ -190,6 +207,41 @@ header .profile .info span:last-child{
     font-size: 12px;
 }
 
+/* MAIN */
+.sent{
+    align-self: flex-end;
+    background: #cbfbb3;
+}
+
+.received{
+    align-self: flex-start;
+    background: #fff;
+}
+
+.sent,
+.received{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    padding: 5px 3px 3px 3px;
+    width: 40%;
+    font-size: 14px;
+    border-radius: 10px;
+}
+
+.sent span,
+.received span{
+    padding: 5px 5px 0 10px;
+    font-weight: 400;
+}
+
+.date{
+    padding-top: 5px;
+    font-size: 10px;
+    color: #b1b1b1;
+    font-weight: 400;
+    align-self: flex-end;
+}
 /* FOOTER */
 footer{
     display: flex;
