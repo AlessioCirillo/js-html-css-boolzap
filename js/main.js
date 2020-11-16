@@ -114,10 +114,22 @@ var app = new Vue({
                     date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                     message: this.newMessageString,
                     status: 'sent',
-                };
+                }
                 this.contacts[this.indexContacts].messages.push(this.newMessage)
-                this.newMessageString = '';
+                this.newMessageString = ''
+                this.autoMessage();
             }
+        },
+
+        autoMessage(){
+            setTimeout(() => {
+                this.newMessage = {
+                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                    message: 'ok',
+                    status: 'received',
+                }
+                this.contacts[this.indexContacts].messages.push(this.newMessage);
+            }, 1000);
         }
     }
 });
