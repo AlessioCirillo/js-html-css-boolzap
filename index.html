@@ -50,7 +50,7 @@
                <ul>
                    <a href="#">
                         <li 
-                            v-for="(contact, index) in contacts" @click="indexContacts = index"
+                            v-for="(contact, index) in contacts" @click="setIndexContact(index)"
                             :class="indexContacts === index ? 'active' : ''"
                         >
                             <img :src="'./img/avatar' + contact.avatar + '.jpg'" alt="">
@@ -87,8 +87,8 @@
             <main>
 
                 <div  
-                    v-for="(message, index) in contacts[indexContacts].messages" 
-                    :class="message.status === 'sent' ? 'sent' : 'received'"
+                    v-for="message in contacts[indexContacts].messages" 
+                    :class="message.status"
                 >
                     <span>{{message.message}}</span>
                     <span class="date">{{message.date}}</span>
@@ -102,7 +102,12 @@
                 <a href="#">
                     <i class="far fa-smile"></i>
                 </a>
-                <input type="text" name="" id="" placeholder="Scrivi un messaggio">
+                <input type="text" 
+                       v-model="newMessageString" 
+                       @keyup.enter='addMessage'
+                       name="" id="" 
+                       placeholder="Scrivi un messaggio"
+                >
                 <a href="#">
                     <i class="fas fa-microphone"></i>
                 </a> 
@@ -112,6 +117,7 @@
     </div>
 
     <!-- JS -->
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.6/dayjs.min.js></script>
     <script src="./js/main.js"></script>
 </body>
 </html>

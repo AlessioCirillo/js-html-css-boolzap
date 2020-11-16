@@ -242,6 +242,7 @@ header .profile .info span:last-child{
     font-weight: 400;
     align-self: flex-end;
 }
+
 /* FOOTER */
 footer{
     display: flex;

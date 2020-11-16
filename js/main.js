@@ -97,10 +97,27 @@ var app = new Vue({
         ],
 
         indexContacts: 0,
+
+        newMessageString: '',
+
+        newMessage:{},
     },
+
     methods: {
         setIndexContact(index){
             this.indexContacts = index;
+        },
+
+        addMessage(){
+            if(this.newMessageString.trim() !== ''){
+                this.newMessage = {
+                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                    message: this.newMessageString,
+                    status: 'sent',
+                };
+                this.contacts[this.indexContacts].messages.push(this.newMessage)
+                this.newMessageString = '';
+            }
         }
     }
 });
