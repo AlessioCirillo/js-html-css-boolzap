@@ -15,6 +15,7 @@ var app = new Vue({
                 name: 'Michele',
                 avatar: '_1',
                 visible: true,
+                lastLog: '',
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -132,6 +133,10 @@ var app = new Vue({
             this.contacts.forEach((contact)=>{
                 contact.visible = contact.name.toLowerCase().includes(this.searchString.toLowerCase())
             })  
+        },
+
+        lastMex(){
+            this.contacts[this.indexContacts].lastLog.push(this.contacts[this.messages.length - 1].date) 
         }
     }
 });
