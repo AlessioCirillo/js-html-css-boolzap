@@ -101,6 +101,8 @@ var app = new Vue({
         newMessageString: '',
 
         searchString:'',
+
+        newDate:'',
     },
 
     methods: {
@@ -125,7 +127,7 @@ var app = new Vue({
                         status: 'received',
                     });
                 }, 1000);
-            }
+            };
         },
 
         searchContact(){
@@ -134,8 +136,18 @@ var app = new Vue({
             })  
         },
 
+        // variabile a cui assegno di volta in volta il contatto con messaggio ricevuto
         lastMex(){
-            return this.contacts[this.indexContacts].messages[this.contacts[this.indexContacts].messages.length - 1].date;
+            this.contacts[this.indexContacts].messages.forEach((message)=>{
+                if( message.status === 'received'){
+                  this.newDate = message.date;
+                }
+            }) 
+            // qui ritorno quella variabile.date che a questo punto avrà l'ultimo messaggio ricevuto
+            return this.newDate;  
         }
     }
 });
+
+
+  // this.contacts[this.indexContacts].messages[this.contacts[this.indexContacts].messages.length - 1].date;
