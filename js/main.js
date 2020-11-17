@@ -15,7 +15,6 @@ var app = new Vue({
                 name: 'Michele',
                 avatar: '_1',
                 visible: true,
-                lastLog: '',
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -136,7 +135,7 @@ var app = new Vue({
         },
 
         lastMex(){
-            this.contacts[this.indexContacts].lastLog.push(this.contacts[this.messages.length - 1].date) 
+            return this.contacts[this.indexContacts].messages[this.contacts[this.indexContacts].messages.length - 1].date;
         }
     }
 });
