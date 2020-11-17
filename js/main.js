@@ -100,7 +100,7 @@ var app = new Vue({
 
         newMessageString: '',
 
-        newMessage:{},
+        searchString:'',
     },
 
     methods: {
@@ -110,26 +110,28 @@ var app = new Vue({
 
         addMessage(){
             if(this.newMessageString.trim() !== ''){
-                this.newMessage = {
+                this.contacts[this.indexContacts].messages.push({
                     date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                     message: this.newMessageString,
                     status: 'sent',
-                }
-                this.contacts[this.indexContacts].messages.push(this.newMessage)
-                this.newMessageString = ''
-                this.autoMessage();
+                });
+
+                this.newMessageString = '';
+
+                setTimeout(() => {
+                    this.contacts[this.indexContacts].messages.push({
+                        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                        message: 'ok',
+                        status: 'received',
+                    });
+                }, 1000);
             }
         },
 
-        autoMessage(){
-            setTimeout(() => {
-                this.newMessage = {
-                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
-                    message: 'ok',
-                    status: 'received',
-                }
-                this.contacts[this.indexContacts].messages.push(this.newMessage);
-            }, 1000);
+        searchContact(){
+            this.contacts.forEach((contact)=>{
+                contact.visible = contact.name.toLowerCase().includes(this.searchString.toLowerCase())
+            })  
         }
     }
 });
