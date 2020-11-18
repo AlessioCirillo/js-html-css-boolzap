@@ -101,8 +101,6 @@ var app = new Vue({
         newMessageString: '',
 
         searchString:'',
-
-        lastLog:'',
     },
 
     methods: {
@@ -137,12 +135,13 @@ var app = new Vue({
         },
 
         lastMex(){
+            let log; 
             this.contacts[this.indexContacts].messages.forEach((message)=>{
                 if( message.status === 'received'){
-                    this.lastLog = message.date;
+                    log = message.date;
                 }
             }) 
-            return this.lastLog;  
+            return log;  
         }
     }
 });
